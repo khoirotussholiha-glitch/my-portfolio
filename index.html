@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haira — Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVIGASI ============ -->
+  <nav class="nav">
+    <span class="nav-logo">haira<span class="dot">.</span>dev</span>
+    <div class="nav-links">
+      <a href="#tentang">tentang</a>
+      <a href="#skill">skill</a>
+      <a href="#project">project</a>
+      <a href="#kontak">kontak</a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">// halo, perkenalkan</p>
+      <h1>Haira</h1>
+      <p class="hero-role">Belajar Informatika &amp; Frontend Development secara mandiri</p>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+        </div>
+        <div class="terminal-body">
+          <span class="prompt">$</span> <span class="typed-text" id="typedText"></span><span class="cursor">▌</span>
+        </div>
+      </div>
+      <a href="#project" class="btn-primary">Lihat Project Saya</a>
+    </div>
+  </header>
+
+  <!-- ============ TENTANG ============ -->
+  <section id="tentang" class="section">
+    <p class="eyebrow">// tentang-saya</p>
+    <h2>Perjalanan Belajar</h2>
+    <p class="section-text">
+      Saya sedang menempuh pembelajaran Teknik Informatika secara otodidak, sebelum mengikuti struktur
+      kurikulum layaknya perkuliahan formal. Saat ini fokus pada dua jalur utama:
+      <strong>Algoritma &amp; Dasar Pemrograman</strong> serta <strong>Frontend Web Development</strong>
+      (HTML, CSS, JavaScript). Saya senang belajar lewat praktik langsung dan membangun project
+      kecil untuk memahami konsep secara nyata.
+      <!-- EDIT: ganti paragraf di atas dengan cerita versi kamu sendiri -->
+    </p>
+  </section>
+
+  <!-- ============ SKILL ============ -->
+  <section id="skill" class="section section-alt">
+    <p class="eyebrow">// skill</p>
+    <h2>Yang Sedang Dipelajari</h2>
+    <div class="skill-grid">
+      <div class="skill-card">
+        <span class="skill-tag">01</span>
+        <h3>HTML</h3>
+        <p>Struktur dasar halaman web, semantic tags, form.</p>
+      </div>
+      <div class="skill-card">
+        <span class="skill-tag">02</span>
+        <h3>CSS</h3>
+        <p>Styling, layout dasar (flexbox), responsive design.</p>
+      </div>
+      <div class="skill-card">
+        <span class="skill-tag">03</span>
+        <h3>JavaScript</h3>
+        <p>Logika dasar, DOM manipulation, interaktivitas halaman.</p>
+      </div>
+      <div class="skill-card">
+        <span class="skill-tag">04</span>
+        <h3>Algoritma</h3>
+        <p>Pseudocode, logika kondisional, trace program &amp; debugging.</p>
+      </div>
+      <!-- EDIT: tambah/ubah skill card sesuai progres belajarmu -->
+    </div>
+  </section>
+
+  <!-- ============ PROJECT ============ -->
+  <section id="project" class="section">
+    <p class="eyebrow">// project</p>
+    <h2>Hasil Karya</h2>
+    <div class="project-grid">
+
+      <article class="project-card">
+        <div class="project-thumb">To-Do List</div>
+        <div class="project-info">
+          <h3>To-Do List App</h3>
+          <p>Aplikasi daftar tugas sederhana menggunakan HTML, CSS, dan JavaScript murni untuk melatih DOM manipulation.</p>
+          <div class="project-links">
+            <a href="#">Live Demo →</a>
+            <a href="#">Kode Sumber →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-thumb">Kalkulator</div>
+        <div class="project-info">
+          <h3>Kalkulator Sederhana</h3>
+          <p>Kalkulator dasar untuk operasi tambah, kurang, kali, bagi. Fokus latihan logika event handling di JavaScript.</p>
+          <div class="project-links">
+            <a href="#">Live Demo →</a>
+            <a href="#">Kode Sumber →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-thumb">Landing Page</div>
+        <div class="project-info">
+          <h3>Landing Page Latihan</h3>
+          <p>Halaman landing page satu-halaman untuk melatih layout, tipografi, dan responsive design dasar.</p>
+          <div class="project-links">
+            <a href="#">Live Demo →</a>
+            <a href="#">Kode Sumber →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- EDIT: duplikasi <article class="project-card">...</article> di atas untuk menambah project baru -->
+
+    </div>
+  </section>
+
+  <!-- ============ KONTAK ============ -->
+  <section id="kontak" class="section section-dark">
+    <p class="eyebrow">// kontak</p>
+    <h2>Mari Terhubung</h2>
+    <p class="section-text">
+      Terbuka untuk kolaborasi, magang, atau sekadar diskusi seputar belajar coding.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:hoirohcantik@gmail.com">Email</a>
+      <a href="https://github.com/khoirotussholiha" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/username" target="_blank">LinkedIn</a>
+      <!-- EDIT: ganti link di atas dengan akun kamu sendiri -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Dibuat dengan HTML &amp; CSS oleh Haira © 2026</p>
+  </footer>
+
+<script>
+  // Efek mengetik sederhana di terminal hero
+  const text = "belajar-untuk-menjadi-developer --status=active";
+  const el = document.getElementById('typedText');
+  let i = 0;
+  function type() {
+    if (i <= text.length) {
+      el.textContent = text.slice(0, i);
+      i++;
+      setTimeout(type, 60);
+    }
+  }
+  type();
+
+  // Smooth scroll untuk navigasi
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
