@@ -1,0 +1,429 @@
+/* ================================================
+   PALET WARNA & VARIABEL
+   Ganti nilai di sini untuk mengubah tema warna
+   ================================================ */
+:root {
+  --bg: #F8F7FB;
+  --bg-card: #FFFFFF;
+  --navy: #1B2140;
+  --navy-soft: #2A3363;
+  --amber: #F2A93B;
+  --coral: #FF8B6B;
+  --violet: #9B8CFF;
+  --teal: #5FD3C4;
+  --muted: #6B7280;
+  --line: rgba(27, 33, 64, 0.08);
+  --font-display: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--navy);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ================================================
+   BACKGROUND GRADIENT MESH (elemen organik, lembut)
+   ================================================ */
+body::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(255, 139, 107, 0.16), transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -25%;
+  right: -15%;
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, rgba(155, 140, 255, 0.14), transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ================================================
+   NAVIGASI — pill mengambang, kaca buram
+   ================================================ */
+.nav {
+  position: sticky;
+  top: 1rem;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 780px;
+  padding: 0.9rem 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 100px;
+  box-shadow: 0 8px 30px -12px rgba(27, 33, 64, 0.15);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.nav-logo .dot { color: var(--coral); }
+
+.nav-links a {
+  margin-left: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--navy);
+  position: relative;
+  transition: color 0.25s var(--ease);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--coral);
+  transition: width 0.3s var(--ease);
+}
+
+.nav-links a:hover { color: var(--coral); }
+.nav-links a:hover::after { width: 100%; }
+
+/* ================================================
+   HERO
+   ================================================ */
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.hero-inner {
+  max-width: 640px;
+  text-align: left;
+  animation: fadeUp 0.9s var(--ease) both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  color: var(--coral);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 8vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(120deg, var(--navy) 30%, var(--coral) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-role {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* Terminal mockup — elemen signature halaman ini, versi lebih empuk */
+.terminal {
+  background: var(--navy);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 24px 50px -20px rgba(27, 33, 64, 0.45);
+  transition: transform 0.4s var(--ease);
+}
+
+.terminal:hover {
+  transform: translateY(-4px);
+}
+
+.terminal-bar {
+  display: flex;
+  gap: 6px;
+  padding: 0.8rem 1.1rem;
+  background: var(--navy-soft);
+}
+
+.terminal-bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background: #EE6A5F; }
+.dot-yellow { background: #F5BD4F; }
+.dot-green { background: #61C454; }
+
+.terminal-body {
+  padding: 1.35rem 1.35rem 1.6rem;
+  font-family: var(--font-display);
+  color: #E8ECF1;
+  font-size: 0.95rem;
+}
+
+.prompt { color: var(--coral); margin-right: 0.5rem; }
+
+.cursor {
+  display: inline-block;
+  color: var(--coral);
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--navy);
+  color: #fff;
+  padding: 0.9rem 1.9rem;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.35s var(--ease);
+  box-shadow: 0 10px 24px -10px rgba(27, 33, 64, 0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(120deg, var(--coral), var(--violet));
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 32px -12px rgba(255, 139, 107, 0.5);
+}
+
+/* ================================================
+   SECTION UMUM
+   ================================================ */
+.section {
+  padding: 6rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-alt { background: transparent; max-width: 100%; }
+.section-alt > * { max-width: 900px; margin-left: auto; margin-right: auto; }
+
+.section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+.section-text {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ================================================
+   SKILL
+   ================================================ */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -20px rgba(27, 33, 64, 0.25);
+}
+
+.skill-tag {
+  font-family: var(--font-display);
+  color: var(--coral);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.skill-card h3 {
+  margin: 0.6rem 0 0.4rem;
+  font-size: 1.15rem;
+}
+
+.skill-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ================================================
+   PROJECT
+   ================================================ */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+.project-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 24px 44px -20px rgba(27, 33, 64, 0.3);
+}
+
+.project-thumb {
+  height: 140px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-soft));
+  color: var(--coral);
+  font-family: var(--font-display);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  /* EDIT: ganti div ini dengan <img src="gambar-project.jpg"> untuk pakai screenshot asli */
+}
+
+.project-info { padding: 1.4rem; }
+
+.project-info h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+
+.project-info p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+.project-links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-right: 1rem;
+  transition: color 0.25s var(--ease);
+}
+
+.project-links a:hover { color: var(--coral); }
+
+/* ================================================
+   KONTAK (dark section, gradasi lembut)
+   ================================================ */
+.section-dark {
+  background: linear-gradient(145deg, var(--navy), var(--navy-soft));
+  color: #fff;
+  max-width: 100%;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  margin: 2rem auto;
+  padding: 5rem 2rem;
+  max-width: min(1100px, calc(100% - 3rem));
+}
+
+.section-dark > * { max-width: 620px; margin-left: auto; margin-right: auto; }
+.section-dark .section-text { color: #C3CBDA; }
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s var(--ease);
+}
+
+.contact-links a:hover {
+  background: var(--coral);
+  border-color: var(--coral);
+  transform: translateY(-2px);
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+.footer {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ================================================
+   SCROLL REVEAL (opsional, butuh sedikit JS)
+   ================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================================
+   RESPONSIVE
+   ================================================ */
+@media (max-width: 640px) {
+  .nav {
+    max-width: calc(100% - 1.5rem);
+    padding: 0.75rem 1.1rem;
+  }
+  .nav-links a { margin-left: 0.85rem; font-size: 0.75rem; }
+  .section { padding: 4rem 1.25rem; }
+  .section-dark { padding: 3.5rem 1.5rem; }
+}
